@@ -1,0 +1,30 @@
+.header {
+  height: 100vh;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba($color-grey-dark, 0.85),
+    rgba($color-grey-mid, 0.85)),
+  url(../images/bg4.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+
+  &__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+    background-image: url("../images/fm_logo.png");
+    background-position: left;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 5rem;
+    width: 100%;
+  }
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}

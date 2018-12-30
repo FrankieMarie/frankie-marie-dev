@@ -1,0 +1,29 @@
+.cta-project {
+  border: 1px solid $color-grey-extra-light;
+  border-radius: 1.2rem;
+  padding: 6rem;
+  margin-bottom: 8rem;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  box-shadow: 0 .5rem 2rem rgba($color-black, .1);
+  background-color: $extra-light;
+  @include respond(seven-hundred) {
+    flex-direction: column;
+  }
+  &__col {
+    flex-grow: 1;
+    flex-basis: 0;
+    &:not(:last-child) {
+      margin-right: 6rem;
+      @include respond(seven-hundred) {
+        margin-right: 0 !important;
+        margin-bottom: 3rem;
+      }
+    }
+  }
+}
+
+.cta-project-text {
+  font-size:$default-font-size;
+}

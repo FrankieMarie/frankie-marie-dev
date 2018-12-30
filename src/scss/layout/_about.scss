@@ -1,0 +1,50 @@
+.section-about {
+  padding: 0 0 8rem 0;
+  position: relative;
+
+  &__intro {
+    background-color: $color-grey-dark;
+    border-top: 1px solid $color-primary;
+    border-bottom: 1px solid $color-primary;
+    padding: 10rem 0;
+
+    h2 {
+      font-size: 4rem;
+      padding-bottom: 6rem;
+    }
+  }
+  &__description {
+    align-content: center;
+
+    &--me {
+      background-image: url('../images/frankie.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 40rem;
+    }
+    p {
+      padding: 6rem 3rem 0 3rem;
+      font-size: 2rem;
+      color: $extra-light;
+    }
+  }
+  &__skills {
+    border: 1px solid $color-grey-extra-light;
+    border-radius: 1.2rem;
+    padding: 3rem 6rem;
+    text-align: center;
+    box-shadow: 0 .5rem 2rem rgba($color-black, .1);
+    background-color: $extra-light;
+  }
+  &__dev, &__design {
+    display: block;
+    font-size: 4rem;
+  }
+}
+
+.list {
+  &-item {
+    list-style: none;
+  }
+}

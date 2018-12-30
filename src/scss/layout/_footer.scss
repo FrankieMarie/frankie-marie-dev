@@ -1,0 +1,116 @@
+.footer {
+  background-color: $color-grey-dark;
+  padding: 8rem 3rem;
+  font-size: 1.4rem;
+
+  &__logo-box {
+    background-image: url("../images/fm_logo_color.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    text-align: center;
+    &-logo{
+      height: 10rem;
+      margin-bottom: 8rem;
+    }
+  }
+
+  &__navigation {
+    border-top: 1px solid $light;
+    padding-top: 2rem;
+    display: inline-block;
+    @include respond(tab-port) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    font-size: 2rem;
+    @include respond(tab-port) {
+      font-size: 3rem;
+    }
+    @include respond(phone) {
+      font-size: 2rem;
+    }
+  }
+
+  &__item {
+    display: inline-block;
+    &:not(:last-child) {
+      margin-right: 6rem;
+    }
+    @include respond(three-twenty) {
+      &:not(:last-child) {
+        margin-right: 4rem;
+      }
+    }
+  }
+
+  &__link {
+    color: $light;
+    display: inline-block;
+    &:link,
+    &:visited {
+      color: $light;
+      display: inline-block;
+    }
+    &:hover { color: $color-primary; }
+  }
+
+  &__email {
+    position: relative;
+    color: $light;
+    display: inline-block;
+    cursor: pointer;
+    &:hover {
+      color: $color-primary;
+      .tooltiptext {
+        visibility: visible;
+      }
+    }
+  }
+
+  &__copyright {
+    border-top: 1px solid $light;
+    padding-top: 2rem;
+    float: right;
+    width: 55%;
+    text-align: center;
+    color: $light;
+    @include respond(tab-port) {
+      width: 100%;
+      float: none;
+    }
+  }
+}
+
+[tooltip]:before {
+  /* needed - do not touch */
+  content: attr(tooltip);
+  position: absolute;
+  visibility: hidden;
+  top: 5px;
+  right: -5px;
+  @include respond(tab-port) {
+    top: 10px;
+    right: -3rem;
+  }
+  @include respond(phone) {
+    right: .5rem;
+  }
+  @include respond(three-twenty) {
+    right: -2.5rem;
+  }
+}
+
+[tooltip]:hover:before {
+  /* needed - do not touch */
+  visibility: visible;
+
+  /* customizable */
+  color: $color-primary;
+  margin-top: 3rem;
+}

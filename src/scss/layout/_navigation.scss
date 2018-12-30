@@ -1,0 +1,45 @@
+.nav {
+  z-index: 9999;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 4rem;
+  @include respond(three-twenty) {
+    margin: 4rem 2rem;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    list-style: none;
+    cursor: pointer;
+    &:not(:last-child) {
+      padding-right: 4rem;
+      @include respond(five-hundred) {
+        padding-right: 2rem;
+      }
+    }
+    @include respond(five-hundred) {
+      padding-top: 2rem;
+    }
+  }
+
+  &__link {
+    color: $color-white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 500;
+    &:hover {
+      color: $color-primary;
+    }
+    @include respond(tab-land) {
+      font-size: 1.4rem;
+    }
+    @include respond(three-twenty) {
+      font-size: 1.2rem;
+    }
+  }
+}

@@ -1,0 +1,163 @@
+.row-big {
+  @include respond(five-hundred) {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+}
+
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 30rem;
+  @include respond(tab-port) {
+    height: 40rem;
+    width: 50rem;
+    @include relCenter;
+    padding: 0 10rem;
+    padding-bottom: 0 !important;
+  }
+  @include respond(five-hundred) {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  &__side {
+    color: $color-black;
+    font-size: $default-font-size;
+    height: 30rem;
+    transition: all .8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+    @include respond(tab-port) {
+      height: 40rem;
+      width: 50rem;
+    }
+
+    &--front {
+      background-color: $color-white;
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+      background-color: $extra-light;
+    }
+    @include respond(five-hundred) {
+      height: 0 !important;
+    }
+
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+
+  &__picture {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    &--1 {
+      background-image: url(../images/trs.png);
+    }
+    &--2 {
+      background-image: url(../images/ffm.png);
+    }
+    &--3 {
+      background-image: url(../images/b&b.png);
+    }
+    &--4 {
+      background-image: url(../images/hoodrobin.png);
+    }
+    &--5 {
+      background-image: url(../images/bar.png);
+    }
+    &--6 {
+      background-image: url(../images/granular.png);
+    }
+  }
+
+  &__cta {
+    @include absCenter;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__text {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
+}
+
+// small card
+
+.cta {
+  perspective: 50rem;
+  -moz-perspective: 50rem;
+  height: 6rem;
+  cursor: pointer;
+  @include respond(phone) {
+    perspective: 80rem;
+    -moz-perspective: 80rem;
+  }
+
+  &__side {
+    color: $color-white;
+    font-weight: 700;
+    font-size: 2rem;
+    height: 6rem;
+    transition: all .8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0 1rem 2rem rgba($color-white, .15);
+    @include respond(seven-hundred) {
+      width: 50%;
+      left: 25%;
+    }
+    @include respond(phone) {
+      width: 100%;
+      left: 0;
+    }
+
+    &--front {
+      background-color: $color-primary;
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+      background-color: $color-primary;
+      font-size: 1.5rem;
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+
+  &__text {
+    text-align: center;
+    @include absCenter;
+  }
+}

@@ -1,0 +1,188 @@
+.recent-work {
+  margin: 8rem 0 6rem 0;
+
+  h2 {
+    font-size: 4rem;
+    margin-bottom: 6rem;
+  }
+
+  .dev-portfolio,
+  .design-portfolio {
+    width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 4rem;
+    margin-bottom: 4rem;
+
+    .item {
+      height: 25rem;
+      border-radius: 1.2rem;
+      position: relative;
+
+      .hvrbox {
+        background-color: rgba(43, 43, 58, 0.95);
+        position: absolute;
+        width: 100%;
+        height: inherit;
+        border-radius: 1.2rem;
+        opacity: 0;
+        transition: .2s;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 1;
+        }
+
+        .hvr-text {
+          color: $color-primary-dark;
+          font-size: 1.4rem;
+          padding: 2rem;
+        }
+
+        .hvr-btn {
+          background: transparent;
+          border: 1px solid $color-primary-dark;
+          padding: .5rem 1rem;
+          color: $color-primary-dark;
+          border-radius: 100px;
+          text-transform: uppercase;
+          font-size: 1.2rem;
+          text-decoration: none;
+
+          &:hover {
+            background-color: $color-primary-dark;
+            color: $color-grey-dark;
+          }
+        }
+      }
+    }
+
+    #one {
+      background-image: url('../images/trs.png');
+      background-position: center;
+      object-fit: cover;
+      background-repeat: no-repeat;
+    }
+
+    #two {
+      background-image: url('../images/ffm.png');
+      background-position: center;
+      object-fit: cover;
+      background-repeat: no-repeat;
+    }
+
+    #three {
+      background-image: url('../images/b&b.png');
+      background-position: center;
+      object-fit: cover;
+      background-repeat: no-repeat;
+    }
+
+    #four {
+      background-image: url('../images/hoodrobin.png');
+      background-position: center;
+      object-fit: cover;
+      background-repeat: no-repeat;
+    }
+
+    #five {
+      background-image: url('../images/bar.png');
+      background-position: center;
+      object-fit: cover;
+      background-repeat: no-repeat;
+    }
+
+    #six {
+      background-image: url('../images/granular.png');
+      background-position: center;
+      object-fit: cover;
+      background-repeat: no-repeat;
+    }
+  }
+  @include respond(five-hundred) {
+    margin: 0 !important;
+  }
+}
+
+.start-project {
+  position: relative;
+  z-index: 3;
+  width: 1200px;
+  background-color: $color-primary-dark;
+  color: $color-white;
+  display: flex;
+  justify-content: center;
+  border-radius: 1.2rem;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+  margin-bottom: -11rem;
+
+  .start-project-content {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 4rem;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    padding: 8rem 0;
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.8rem;
+    }
+
+    button {
+      color: $color-primary-dark;
+      padding: 1rem 2rem;
+      background: transparent;
+      border: 2px solid $color-primary-dark;
+      border-radius: 100px;
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      transition: all .2s ease-in-out;
+
+      &:hover {
+        background-color: $color-primary-dark;
+        color: $color-primary-dark;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+.row-small {
+  display: none;
+
+  &__cta {
+    padding: 0 1.5rem;
+  }
+
+  @include respond(five-hundred) {
+    display: block;
+  }
+
+  &__col {
+    text-align: center;
+    &:not(:last-child) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__link {
+    color: $color-primary;
+    text-decoration: none;
+    font-size: 2rem !important;
+    font-weight: 700;
+  }
+
+  &__text {
+    font-size: 1.6rem;
+    padding-top: 1rem;
+  }
+}
