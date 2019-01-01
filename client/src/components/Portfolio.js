@@ -10,8 +10,6 @@ class Portfolio extends Component {
   }
 
   render() {
-    const { projects } = this.props;
-    console.log(projects);
     return (
       <section className="section-cards u-margin-bottom-big" id="section-cards">
         <div className="u-center-text u-margin-bottom-big">
