@@ -7,7 +7,7 @@ export const SET_ADMIN_FAILED = 'SET_ADMIN_FAILED';
 
 // Login Admin admin - get token
 export const loginAdmin = (userData) => dispatch => {
-  axios.post('http://localhost:5000/api/admin/login', userData)
+  axios.post('/api/admin/login', userData)
     .then(res => {
       const { token } = res.data
       localStorage.setItem('jwtToken', token)

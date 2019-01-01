@@ -11,7 +11,7 @@ export const addProject = (project) => dispatch => {
     formData.append(key, project[key])
   }
   axios.post(
-    `http://localhost:5000/projects/new`,
+    '/api/projects/new',
     formData,
     { headers: { Authorization: authHeader}})
     .then(newProject => {
@@ -33,7 +33,7 @@ export const GET_PROJECTS_SUCCESS = 'GET_PROJECTS_SUCCESS';
 export const GET_PROJECTS_FAILED = 'GET_PROJECTS_FAILED';
 
 export const getProjects = () => dispatch => {
-  axios.get('http://localhost:5000/api/projects/all')
+  axios.get('/api/projects/all')
   .then(projects => {
     dispatch({
       type: GET_PROJECTS_SUCCESS,
