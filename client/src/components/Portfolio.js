@@ -1,7 +1,17 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import _ from 'lodash';
+import { getProjects } from '../redux/actions/projects';
 
 class Portfolio extends Component {
+  componentDidMount() {
+    const { getProjects } = this.props;
+    getProjects();
+  }
+
   render() {
+    const { projects } = this.props;
+    console.log(projects);
     return (
       <section className="section-cards u-margin-bottom-big" id="section-cards">
         <div className="u-center-text u-margin-bottom-big">
@@ -11,6 +21,7 @@ class Portfolio extends Component {
         </div>
 
         {/* for big screens */}
+
         <div className="row row-big">
           <div className="col-1-of-3 row-big">
             <div className="card">
@@ -144,4 +155,13 @@ class Portfolio extends Component {
   }
 }
 
-export default Portfolio;
+const mapStateToProps = (state) => {
+  return {
+    projects: _.get(state, 'projects.data', {})
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  { getProjects }
+)(Portfolio);
